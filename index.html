@@ -1,14 +1,41 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
   <head>
+    <title>My Attendance</title>
     <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Attendance</title>
+    <link rel="stylesheet" href="style.css" />
   </head>
   <body>
-    <button onclick="fetch_attendance()">Click to get attendance</button>
-    <div class="att" id="att">Attendance is:</div>
+    <header>
+      <h1>My Attendance</h1>
+      <nav>
+        <ul>
+          <li><a href="https://www.harsheet.co">Home</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <main>
+      <section>
+        <h2>My Attendance Data</h2>
+        <p>
+          Here is a summary of my attendance:
+          <button class="fancy" onclick="fetch_attendance()">
+            Click to get attendance
+          </button>
+        </p>
+
+        <p>
+          Attendance is:
+          <p id="att">Click Button</p>
+        </p>
+      </section>
+    </main>
+
+    <footer>
+      <p>&copy; 2023 Harsheet.co</p>
+    </footer>
   </body>
   <script type="text/javascript">
     async function fetch_attendance() {
