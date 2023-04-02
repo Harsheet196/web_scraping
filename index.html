@@ -7,6 +7,26 @@
     <title>Document</title>
   </head>
   <body>
-    <p>This is my attendance websit ,Welcome!!</p>
+    <button onclick="fetch_attendance()">Click to get attendance</button>
+    <div class="att" id="att">Attendance is:</div>
   </body>
+  <script type="text/javascript">
+    async function fetch_attendance() {
+      var apiUrl = "http://43.204.103.36:5000/";
+      document.getElementById("att").innerHTML = "Loading...";
+      await fetch(apiUrl)
+        .then((response) => {
+          return response.json();
+        })
+        .then((data) => {
+          // Work with JSON data here
+          console.log(data);
+          document.getElementById("att").innerHTML = data["data"];
+        })
+        .catch((err) => {
+          // Do something for an error here
+          console.log("error!");
+        });
+    }
+  </script>
 </html>
